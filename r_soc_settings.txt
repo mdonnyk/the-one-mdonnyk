@@ -4,7 +4,7 @@ Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 
 
-Scenario.endTime = 987529
+Scenario.endTime = 16981816
 #987529 Haggle Cam
 #274883 Haggle
 #16981816 Reality
@@ -30,7 +30,7 @@ Group.interface1 = btInterface
 Group.speed = 2.5, 4.5
 Group.msgTtl = 1440
 
-Group.nrofHosts = 36
+Group.nrofHosts = 97
 #36 Haggle Cam
 #41 Haggle
 #97 Reality
@@ -39,12 +39,15 @@ Group1.groupID = p
 
 Events.nrof = 2
 Events1.class = ExternalEventsQueue
-Events1.filePath = scenario/Haggle4-Cam-Imote.csv
+Events1.filePath = scenario/RealityConnectionTraceFinal.txt
+#Haggle4-Cam-Imote.csv
+#Haggle3-Infocom5.txt
+#RealityConnectionTraceFinal.txt
 
 Events2.class = MessageEventGenerator
 Events2.interval = 10,50
 Events2.size =250k,500k
-Events2.hosts = 0,35
+Events2.hosts = 0,96
 # 0,35 Haggle Cam
 # 0,40 Haggle
 # 0,96 Reality
