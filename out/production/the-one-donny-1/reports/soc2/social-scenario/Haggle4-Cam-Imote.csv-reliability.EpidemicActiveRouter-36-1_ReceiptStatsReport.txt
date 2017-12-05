@@ -1,0 +1,8 @@
+Receipt stats for scenario social-scenario/Haggle4-Cam-Imote.csv-reliability.EpidemicActiveRouter-36-1
+sim_time: 987529.0000
+recipt_created: 3315
+message_deleted: 50893
+receipt_delivered1: 3282
+receipt_delivered2: 895612
+receipt_relayed: 107706
+convergence_time_average: NaN

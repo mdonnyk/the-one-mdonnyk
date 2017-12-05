@@ -1,0 +1,20 @@
+Message stats for scenario Scenario-Reality-tombstone.EpidemicPassiveRouter
+sim_time: 16981816.0000
+created: 285420
+started: 30855522
+relayed: 30829158
+aborted: 26364
+dropped: 29754269
+removed: 620302
+delivered: 69910
+delivery_prob: 0.2449
+response_prob: 0.0000
+overhead_ratio: 439.9835
+latency_avg: 663254.3320
+latency_med: 555405.0000
+hopcount_avg: 12.8516
+hopcount_med: 10
+buffertime_avg: 75186.9555
+buffertime_med: 11665.0000
+rtt_avg: NaN
+rtt_med: NaN

@@ -1,0 +1,154 @@
+
+# Setting test for ONE intact Connection Mode
+
+
+#Scenario information
+Scenario.name = selfishness-scenario
+Scenario.simulateConnections = false
+Scenario.updateInterval = 1 
+
+Scenario.endTime = 43200
+
+#Scenario.endTime = 2160000
+#987529 Haggle Cam
+#274883 Haggle
+#16981816 Reality
+
+
+Report.warmup = 1
+Scenario.nrofHostGroups = 1
+
+
+#Interfaces informations
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+btInterface.scanInterval = 120
+
+
+#Group Information
+## Buffer Size : 200 messages of 10 K ~ 2M
+Group.bufferSize = 20M
+
+## Router
+
+##BubbleRap router
+Group.router = DecisionEngineRouter
+DecisionEngineRouter.decisionEngine = community.BubbleRapSelfishness
+DecisionEngineRouter.communityDetectAlg = routing.community.KCliqueCommunityDetection
+DecisionEngineRouter.K = 5
+DecisionEngineRouter.familiarThreshold = 700
+#DecisionEngineRouter.centralityAlg = routing.community.CWindowCentrality
+DecisionEngineRouter.centralityAlg = routing.community.DegreeCentrality
+#a=
+
+##RANK router
+#Group.router = DecisionEngineRouter
+#DecisionEngineRouter.decisionEngine = community.RANKDecisionEngine
+#DecisionEngineRouter.centralityAlg = routing.community.CWindowCentrality
+#DecisionEngineRouter.centralityAlg = routing.community.SimpleWinCentrality
+#DecisionEngineRouter.centralityAlg = routing.community.AverageWinCentrality
+#DecisionEngineRouter.centralityAlg = routing.community.RandomDegreeCentrality
+#DecisionEngineRouter.centralityAlg = routing.community.KalmanDegreeCentrality
+
+
+#Group.router = DecisionEngineRouter
+#DecisionEngineRouter.decisionEngine = community.RandomWalk
+
+## RANK improve with FamiliarSet
+#Group.router = DecisionEngineRouter
+#DecisionEngineRouter.decisionEngine = community.RANKDecision3
+#DecisionEngineRouter.centralityAlg = routing.community.AverageWinCentrality
+#DecisionEngineRouter.centralityAlg = routing.community.KalmanDegreeCentrality
+#DecisionEngineRouter.centralityAlg = routing.community.KalmanAverageCentrality
+#DecisionEngineRouter.communityDetectAlg = routing.community.SimpleFamilyDetection
+#DecisionEngineRouter.familiarThreshold = 150000
+#DecisionEngineRouter.socialAlg = routing.community.SocialCentralityDetection
+#DecisionEngineRouter.socialControl = 0.0
+
+
+
+## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240
+Group.msgTtl = 30240
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+
+
+#Group1 Information
+Group1.groupID = A
+Group1.waitTime = 10, 30 
+Group1.speed = 0.8, 1.4
+Group1.nrofHosts = 97
+#36 Haggle Cam
+#41 Haggle
+#97 Reality
+Group1.nodeLocation = 10, 10
+Group1.movementModel = StationaryMovement
+
+
+#How many event generator
+Events.nrof = 2
+
+## Trace information
+Events1.class = ExternalEventsQueue
+Events1.filePath = scenario/RealityConnectionTraceFinal.txt
+#Events1.filePath = Haggle4-Cam-Imote.csv
+#RealityConnectionTraceRevised.txt
+#Haggle4-Cam-Imote.csv
+#Haggle3-Infocom5.txt 
+#RealityConnectionTraceFinal.txt
+
+
+## Message creation parameters
+Events2.class = MessageEventGenerator
+#Events2.interval = 58, 62 
+Events2.interval = 290, 310 
+#97, 103
+# 25,30 (~120 texts/hour) 
+#290, 310 (~12 texts/hour)
+# 580, 620 (~ 6 texts/hour)
+Events2.size = 10k
+
+## range of message source/destination address 
+Events2.hosts = 0, 96
+# 0, 35 Haggle Cam
+# 0,40 Haggle
+# 0,96 Reality
+Events2.prefix = M
+
+# World's size for Movement Models without implicit size (width, height; meters)
+MovementModel.worldSize = 100, 100
+
+# seed for movement models' pseudo random number generator (default = 0)
+MovementModel.rngSeed = [2; 8372; 98092; 18293; 777]
+
+
+#ReportsInformations
+Report.nrofReports = 4
+
+Report.reportDir = reports/Selfishness
+
+
+
+
+#Report classes to load
+Report.report1 = MessageStatsReport
+Report.report2 = BufferOccupancyReport
+Report.report3 = CommunityDetectionReport
+Report.report4 = BufferOverflowReport
+
+#Report.report1 = DeliveryCentralityReport
+
+#Report.report1 = FamilySetDetectionReport
+#Report.report2 = MessageStatsReport
+
+#Report.report4 = MessageReceivedReport
+
+#Report.report1 = UniqueEncountersReport
+#Report.report2 = TotalEncountersReport
+#Report.report4 = BufferOccupancyEWMAReport
+#Report.report3 = DegreeCentralityReport 
+#Report.report8 = CommunityDetectionReport
+
+
+

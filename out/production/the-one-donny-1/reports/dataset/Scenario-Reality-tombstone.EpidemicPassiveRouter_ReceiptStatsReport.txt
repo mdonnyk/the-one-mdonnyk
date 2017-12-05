@@ -1,0 +1,6 @@
+Receipt stats for scenario Scenario-Reality-tombstone.EpidemicPassiveRouter
+sim_time: 16981816.0000
+recipt_created: 69910
+receipt_delivered: 11861
+receipt_relayed: 620302
+round_trip_time_average: 854007.1749

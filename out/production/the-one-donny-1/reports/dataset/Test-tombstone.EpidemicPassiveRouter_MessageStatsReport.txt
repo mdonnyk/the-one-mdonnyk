@@ -1,0 +1,20 @@
+Message stats for scenario Test-tombstone.EpidemicPassiveRouter
+sim_time: 987529.0000
+created: 16593
+started: 1101833
+relayed: 1100094
+aborted: 1739
+dropped: 694572
+removed: 176178
+delivered: 10617
+delivery_prob: 0.6398
+response_prob: 0.0000
+overhead_ratio: 102.6163
+latency_avg: 96804.6705
+latency_med: 71780.0000
+hopcount_avg: 3.9714
+hopcount_med: 4
+buffertime_avg: 51080.8184
+buffertime_med: 26685.0000
+rtt_avg: NaN
+rtt_med: NaN

@@ -1,0 +1,20 @@
+Message stats for scenario default-social-scenario.haggle-cam
+sim_time: 16981816.0000
+created: 56692
+started: 10843426
+relayed: 10811393
+aborted: 32033
+dropped: 7843636
+removed: 1454067
+delivered: 32628
+delivery_prob: 0.5755
+response_prob: 0.0000
+overhead_ratio: 330.3532
+latency_avg: 489611.4389
+latency_med: 327573.0000
+hopcount_avg: 6.5191
+hopcount_med: 6
+buffertime_avg: 227444.6471
+buffertime_med: 83805.0000
+rtt_avg: NaN
+rtt_med: NaN

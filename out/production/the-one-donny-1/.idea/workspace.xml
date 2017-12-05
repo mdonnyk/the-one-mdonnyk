@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50428be8-43f8-4b9c-9604-4e76b7fa211f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rsoc_settings.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/CommunityDetectionReport.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/MaxPropRouter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/MaxPropRouterWithEstimation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/AvgDegreeCentrality.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/BubbleRapSelfishness.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/CWindowCentrality.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/Centrality.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/CommunityDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/CommunityDetectionEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/DegreeCentrality.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/DistributedBubbleRap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/Duration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/KCliqueCommunityDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/LABELDecisionEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/ModularityCommunityDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/SWindowCentrality.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/community/SimpleCommunityDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/maxprop/MaxPropDijkstra.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/maxprop/MeetingProbabilitySet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/maxprop/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/schedule/ScheduleDijkstra.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/schedule/ScheduleEntry.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routing/schedule/ScheduleOracle.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connection-wald.txt" afterPath="$PROJECT_DIR$/connection-wald.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/AdjacencyGraphvizReport.java" afterPath="$PROJECT_DIR$/report/AdjacencyGraphvizReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/BufferOccupancyPerHourReport.java" afterPath="$PROJECT_DIR$/report/BufferOccupancyPerHourReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/BufferOccupancyReport.java" afterPath="$PROJECT_DIR$/report/BufferOccupancyReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/ConnectivityDtnsim2Report.java" afterPath="$PROJECT_DIR$/report/ConnectivityDtnsim2Report.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/ConnectivityONEReport.java" afterPath="$PROJECT_DIR$/report/ConnectivityONEReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/ContactTimesReport.java" afterPath="$PROJECT_DIR$/report/ContactTimesReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/ContactsDuringAnICTReport.java" afterPath="$PROJECT_DIR$/report/ContactsDuringAnICTReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/ContactsPerHourReport.java" afterPath="$PROJECT_DIR$/report/ContactsPerHourReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/CreatedMessagesReport.java" afterPath="$PROJECT_DIR$/report/CreatedMessagesReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/DTN2Reporter.java" afterPath="$PROJECT_DIR$/report/DTN2Reporter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/DeliveredMessagesReport.java" afterPath="$PROJECT_DIR$/report/DeliveredMessagesReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/DeliveryCentralityReport.java" afterPath="$PROJECT_DIR$/report/DeliveryCentralityReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/DistanceDelayReport.java" afterPath="$PROJECT_DIR$/report/DistanceDelayReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/EncountersVSUniqueEncountersReport.java" afterPath="$PROJECT_DIR$/report/EncountersVSUniqueEncountersReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/EnergyLevelReport.java" afterPath="$PROJECT_DIR$/report/EnergyLevelReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/EventLogReport.java" afterPath="$PROJECT_DIR$/report/EventLogReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/InterContactTimesReport.java" afterPath="$PROJECT_DIR$/report/InterContactTimesReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MessageDelayReport.java" afterPath="$PROJECT_DIR$/report/MessageDelayReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MessageDeliveryReport.java" afterPath="$PROJECT_DIR$/report/MessageDeliveryReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MessageGraphvizReport.java" afterPath="$PROJECT_DIR$/report/MessageGraphvizReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MessageLocationReport.java" afterPath="$PROJECT_DIR$/report/MessageLocationReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MessageReport.java" afterPath="$PROJECT_DIR$/report/MessageReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MessageStatsReport.java" afterPath="$PROJECT_DIR$/report/MessageStatsReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/MovementNs2Report.java" afterPath="$PROJECT_DIR$/report/MovementNs2Report.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/PingAppReporter.java" afterPath="$PROJECT_DIR$/report/PingAppReporter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/ReceiptStatsReport.java" afterPath="$PROJECT_DIR$/report/ReceiptStatsReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/Report.java" afterPath="$PROJECT_DIR$/report/Report.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/TotalContactTimeReport.java" afterPath="$PROJECT_DIR$/report/TotalContactTimeReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/TotalEncountersReport.java" afterPath="$PROJECT_DIR$/report/TotalEncountersReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/UniqueEncountersReport.java" afterPath="$PROJECT_DIR$/report/UniqueEncountersReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/package.html" afterPath="$PROJECT_DIR$/report/package.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicActiveRouter-10_MessageStatsReport.txt" afterPath="$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicActiveRouter-10_MessageStatsReport.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicActiveRouter-10_ReceiptStatsReport.txt" afterPath="$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicActiveRouter-10_ReceiptStatsReport.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routing/DecisionEngineRouter.java" afterPath="$PROJECT_DIR$/routing/DecisionEngineRouter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routing/RoutingDecisionEngine.java" afterPath="$PROJECT_DIR$/routing/RoutingDecisionEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routing/tombstone/EpidemicAERouter.java" afterPath="$PROJECT_DIR$/routing/tombstone/EpidemicAERouter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routing/tombstone/EpidemicActiveRouter.java" afterPath="$PROJECT_DIR$/routing/tombstone/EpidemicActiveRouter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routing/tombstone/EpidemicFlooding.java" afterPath="$PROJECT_DIR$/routing/tombstone/EpidemicFlooding.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routing/tombstone/EpidemicPassiveRouter.java" afterPath="$PROJECT_DIR$/routing/tombstone/EpidemicPassiveRouter.java" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DecisionEngineRouter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routing/DecisionEngineRouter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="377" column="9" lean-forward="true" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+              <folding>
+                <element signature="e#5869#5870#0" expanded="true" />
+                <element signature="e#5913#5914#0" expanded="true" />
+                <element signature="e#9196#9197#0" expanded="true" />
+                <element signature="e#9224#9225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EpidemicActiveRouter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routing/reliability/EpidemicActiveRouter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="139" column="38" lean-forward="false" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="38" />
+              <folding>
+                <element signature="e#4291#4292#0" expanded="true" />
+                <element signature="e#4319#4320#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connection-wald.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connection-wald.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test-tombstone.EpidemicPassiveRouter_MessageStatsReport.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reports/dataset/Test-tombstone.EpidemicPassiveRouter_MessageStatsReport.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rsoc_settings.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rsoc_settings.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default_settings.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/default_settings.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoutingDecisionEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routing/RoutingDecisionEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EpidemicFloodRouter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routing/reliability/EpidemicFloodRouter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>transferd</find>
+      <find>shouldDelete</find>
+      <find>connectionUp</find>
+      <find>system</find>
+      <find>messageNeedtoDelete</find>
+      <find>update</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/report/ReceiptStatsReport.java" />
+        <option value="$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_ReceiptStatsReport.txt" />
+        <option value="$PROJECT_DIR$/debug_settings.txt" />
+        <option value="$PROJECT_DIR$/routing/tombstone/EpidemicAERouter.java" />
+        <option value="$PROJECT_DIR$/routing/tombstone/EpidemicFlooding.java" />
+        <option value="$PROJECT_DIR$/routing/tombstone/EpidemicPassiveRouter.java" />
+        <option value="$PROJECT_DIR$/report/BufferOccupancyPerHourReport.java" />
+        <option value="$PROJECT_DIR$/routing/tombstone/EpidemicActiveRouter.java" />
+        <option value="$PROJECT_DIR$/default_settings.txt" />
+        <option value="$PROJECT_DIR$/connection-wald.txt" />
+        <option value="$PROJECT_DIR$/routing/RoutingDecisionEngine.java" />
+        <option value="$PROJECT_DIR$/routing/DecisionEngineRouter.java" />
+        <option value="$PROJECT_DIR$/rsoc_settings.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="the-one-social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="the-one-social" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="the-one-social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="the-one-social" type="462c0819:PsiDirectoryNode" />
+              <item name="routing" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../the-one-pitt/routing/ActiveRouter.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JaLkoMtoL\IdeaProjects\the-one-social" />
+      <recent name="C:\Users\JaLkoMtoL\IdeaProjects\selfishness-the-one-master" />
+      <recent name="C:\Users\JaLkoMtoL\IdeaProjects\selfishness-the-one-master\report" />
+      <recent name="C:\Users\JaLkoMtoL\IdeaProjects\selfishness-the-one-master\routing" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.run">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="selfishness-the-one-master" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="dataset" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="core.DTNSim" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-b 1 connection-wald.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="the-one-donny-1" />
+      <envs />
+    </configuration>
+    <configuration name="debug" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="core.DTNSim" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-b 1 debug_settings.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="the-one-donny-1" />
+      <envs />
+    </configuration>
+    <configuration name="run" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="core.DTNSim" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-b 1 rsoc_settings.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="the-one-donny-1" />
+      <envs />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.dataset" />
+      <item index="1" class="java.lang.String" itemvalue="Application.run" />
+      <item index="2" class="java.lang.String" itemvalue="Application.debug" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50428be8-43f8-4b9c-9604-4e76b7fa211f" name="Default" comment="" />
+      <created>1509696881057</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1509696881057</updated>
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1509784089965</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1509784089965</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.81458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/routing/RoutingDecisionEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="118" column="42" lean-forward="false" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/tombstone/EpidemicActiveRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2771">
+          <caret line="184" column="42" lean-forward="false" selection-start-line="184" selection-start-column="19" selection-end-line="184" selection-end-column="42" />
+          <folding>
+            <element signature="e#4722#4723#0" expanded="true" />
+            <element signature="e#4749#4750#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
+            <element signature="e#5177#5178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/DecisionEngineRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7157">
+          <caret line="432" column="28" lean-forward="false" selection-start-line="432" selection-start-column="22" selection-end-line="432" selection-end-column="28" />
+          <folding>
+            <element signature="e#5869#5870#0" expanded="true" />
+            <element signature="e#5913#5914#0" expanded="true" />
+            <element signature="e#9196#9197#0" expanded="true" />
+            <element signature="e#9224#9225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/tombstone/EpidemicActiveRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="173" column="17" lean-forward="false" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+          <folding>
+            <element signature="e#4722#4723#0" expanded="true" />
+            <element signature="e#4749#4750#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
+            <element signature="e#5177#5178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/RoutingDecisionEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="118" column="42" lean-forward="false" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default_settings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection-wald.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/BufferOccupancyPerHourReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="71" lean-forward="false" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-tombstone.EpidemicPassiveRouter_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-tombstone.EpidemicPassiveRouter_ReceiptStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/Ehehe/default-social-scenario.haggle-cam_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debug_settings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="47" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicActiveRouter-10_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/DecisionEngineRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+          <folding>
+            <element signature="e#5869#5870#0" expanded="true" />
+            <element signature="e#5913#5914#0" expanded="true" />
+            <element signature="e#9196#9197#0" expanded="true" />
+            <element signature="e#9224#9225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Tuple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-tombstone.EpidemicPassiveRouter_BufferOccupancyPerHourReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1539" lean-forward="true" selection-start-line="0" selection-start-column="1539" selection-end-line="0" selection-end-column="1539" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection-wald.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/Ehehe/default-social-scenario.haggle-cam_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debug_settings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_BufferOccupancyPerHourReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/DecisionEngineRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5746">
+          <caret line="346" column="13" lean-forward="false" selection-start-line="346" selection-start-column="13" selection-end-line="346" selection-end-column="13" />
+          <folding>
+            <element signature="e#5869#5870#0" expanded="true" />
+            <element signature="e#5913#5914#0" expanded="true" />
+            <element signature="e#9196#9197#0" expanded="true" />
+            <element signature="e#9224#9225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_ReceiptStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/ReceiptStatsReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/WithoutSelfishness/note.txt" />
+    <entry file="file://$PROJECT_DIR$/reports/WithoutSelfishness/default-social-scenario.reality_MessageStatsReport.txt" />
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_ReceiptStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_BufferOccupancyPerHourReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicPassiveRouter-10_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debug_settings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="47" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/Ehehe/default-social-scenario.haggle-cam_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test/Debug-tombstone.EpidemicActiveRouter-10_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Tuple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-tombstone.EpidemicPassiveRouter_BufferOccupancyPerHourReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1539" lean-forward="false" selection-start-line="0" selection-start-column="1539" selection-end-line="0" selection-end-column="1539" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-tombstone.EpidemicPassiveRouter_ReceiptStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-tombstone.EpidemicPassiveRouter_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-SprayAndWaitRouter_BufferOccupancyPerHourReport.txt" />
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Scenario-Reality-SprayAndWaitRouter_MessageStatsReport.txt" />
+    <entry file="file://$PROJECT_DIR$/routing/tombstone/EpidemicAERouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="80" column="8" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/tombstone/EpidemicFlooding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/tombstone/EpidemicPassiveRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="153" column="8" lean-forward="false" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/BufferOccupancyPerHourReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1066">
+          <caret line="29" column="66" lean-forward="false" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default_settings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/tombstone/EpidemicActiveRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2771">
+          <caret line="184" column="42" lean-forward="false" selection-start-line="184" selection-start-column="19" selection-end-line="184" selection-end-column="42" />
+          <folding>
+            <element signature="e#4722#4723#0" expanded="true" />
+            <element signature="e#4749#4750#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
+            <element signature="e#5177#5178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/dataset/Test-tombstone.EpidemicPassiveRouter_MessageStatsReport.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/reliability/EpidemicActiveRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="139" column="38" lean-forward="false" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="38" />
+          <folding>
+            <element signature="e#4291#4292#0" expanded="true" />
+            <element signature="e#4319#4320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/RoutingDecisionEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/reliability/EpidemicFloodRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routing/DecisionEngineRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="377" column="9" lean-forward="true" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+          <folding>
+            <element signature="e#5869#5870#0" expanded="true" />
+            <element signature="e#5913#5914#0" expanded="true" />
+            <element signature="e#9196#9197#0" expanded="true" />
+            <element signature="e#9224#9225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection-wald.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsoc_settings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

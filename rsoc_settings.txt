@@ -1,0 +1,59 @@
+## Scenario settings
+Scenario.name = social-%%Events1.filePath%%-%%DecisionEngineRouter.decisionEngine%%-%%Group.nrofHosts%%-%%MovementModel.rngSeed%%
+Scenario.simulateConnections = false
+Scenario.updateInterval = 1
+
+#haggle cam
+Scenario.endTime = 987529
+
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+btInterface.scanInterval = 120
+
+Scenario.nrofHostGroups = 1
+
+Group.movementModel = RandomWaypoint
+Group.router = DecisionEngineRouter
+#DecisionEngineRouter.decisionEngine = reliability.EpidemicRouter
+#DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveRouter
+#DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
+DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicRouter]
+
+Group.bufferSize = 50M
+Group.waitTime = 0, 120
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+Group.speed = 2.5, 4.5
+Group.msgTtl = 1440
+
+Group.nrofHosts = 36
+Group1.groupID = p
+
+Events.nrof = 2
+Events1.class = ExternalEventsQueue
+Events1.filePath = scenario/Haggle4-Cam-Imote.csv
+
+Events2.class = MessageEventGenerator
+Events2.interval = 10,50
+Events2.size =250k,500k
+Events2.hosts = 0, 35
+Events2.prefix = M
+
+
+MovementModel.rngSeed = 1
+MovementModel.worldSize = 2500, 2500
+MovementModel.warmup = 1
+
+#ReportsInformations
+Report.nrofReports = 5
+Report.warmup = 0
+Report.reportDir = reports/soc3
+Report.report1 = MessageStatsReport
+Report.report2 = BufferOccupancyPerDayReport
+Report.report3 = SIRReport
+Report.report4 = ReceiptStatsReport
+Report.report5 = DeliveryIntervalReport
+
+Optimization.cellSizeMult = 5
+Optimization.randomizeUpdateOrder = true

@@ -1,0 +1,20 @@
+Message stats for scenario social-scenario/Haggle4-Cam-Imote.csv-reliability.EpidemicPassiveRouter-36-1
+sim_time: 987529.0000
+created: 33483
+started: 430972
+relayed: 428774
+aborted: 2198
+dropped: 423902
+removed: 17310
+delivered: 3308
+delivery_prob: 0.0988
+response_prob: 0.0000
+overhead_ratio: 128.6173
+latency_avg: 29055.4686
+latency_med: 21718.0000
+hopcount_avg: 5.4973
+hopcount_med: 3
+buffertime_avg: 8912.6630
+buffertime_med: 1093.0000
+rtt_avg: NaN
+rtt_med: NaN
