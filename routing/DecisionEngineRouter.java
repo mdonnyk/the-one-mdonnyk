@@ -94,7 +94,7 @@ public class DecisionEngineRouter extends ActiveRouter
 	protected Set<String> tombstones;
 
 	//Set for scheduling message to Delete
-	protected Set<Message> readyToDelete;
+	//protected Set<Message> readyToDelete;
 
 	/**
 	 * Used to save state machine when new connections are made. See comment in
@@ -121,7 +121,7 @@ public class DecisionEngineRouter extends ActiveRouter
 		if(tombstoning)
 			tombstones = new HashSet<String>(10);
 		conStates = new HashMap<Connection, Integer>(4);
-		readyToDelete = new HashSet<Message>();
+		//readyToDelete = new HashSet<Message>();
 	}
 
 	public DecisionEngineRouter(DecisionEngineRouter r)
@@ -134,7 +134,7 @@ public class DecisionEngineRouter extends ActiveRouter
 		if(this.tombstoning)
 			tombstones = new HashSet<String>(10);
 		conStates = new HashMap<Connection, Integer>(4);
-		readyToDelete = new HashSet<Message>();
+		//readyToDelete = new HashSet<Message>();
 	}
 
 	@Override
@@ -205,9 +205,12 @@ public class DecisionEngineRouter extends ActiveRouter
 			for(Message m : msgs)
 			{
 				//checking Message to Delete;
-				if (decider.shouldDeleteMessage(m))
+				/*if (decider.shouldDeleteMessage(m))
 					readyToDelete.add(m);
 				if(!readyToDelete.contains(m)&&decider.shouldSendMessageToHost(m, otherNode))
+					outgoingMessages.add(new Tuple<Message,Connection>(m, con));*/
+
+				if(decider.shouldSendMessageToHost(m, otherNode))
 					outgoingMessages.add(new Tuple<Message,Connection>(m, con));
 			}
 		}
@@ -368,7 +371,7 @@ public class DecisionEngineRouter extends ActiveRouter
 		//System.out.println(getHost()+"\t:\t"+SimClock.getTime());
 		super.update();
 		//////////////
-		for (Message m : readyToDelete) {
+		/*for (Message m : readyToDelete) {
 			if (this.isSending(m.getId())) {
 				List<Connection> conList = getHost().getConnections();
 				for (Connection con : conList) {
@@ -380,7 +383,7 @@ public class DecisionEngineRouter extends ActiveRouter
 			}
 			getHost().deleteMessage(m.getId(), false);
 		}
-		readyToDelete.clear();
+		readyToDelete.clear();*/
 
 		///////////////
 

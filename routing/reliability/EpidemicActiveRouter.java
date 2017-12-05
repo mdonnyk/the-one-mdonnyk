@@ -75,6 +75,23 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
             }
         }
 
+        DecisionEngineRouter thisRouter = (DecisionEngineRouter) thisHost.getRouter();
+        for (String m : messageReadytoDelete) {
+            if (thisRouter.isSending(m)) {
+                List<Connection> conList = thisHost.getConnections();
+                for (Connection con : conList) {
+                    if (con.getMessage()!=null&&con.getMessage().getId()==m) {
+                        con.abortTransfer();
+                        break;
+                    }
+                }
+            }
+            thisHost.deleteMessage(m, false);
+        }
+        messageReadytoDelete.clear();
+
+
+
         /** Remove message that peer is already have */
         for (Message m : peerMessageList){
             if (request.contains(m.getId())){
@@ -138,7 +155,7 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
 
     @Override
     public boolean shouldDeleteMessage(Message m) {
-        return messageReadytoDelete.contains(m.getId());
+        return /*messageReadytoDelete.contains(m.getId())*/ false;
     }
 
     private EpidemicActiveRouter getAnotherRouter(DTNHost peer) {

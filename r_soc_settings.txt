@@ -1,10 +1,13 @@
 ## Scenario settings
-Scenario.name = social-%%Events1.filePath%%-%%DecisionEngineRouter.decisionEngine%%-%%Group.nrofHosts%%-%%MovementModel.rngSeed%%
+Scenario.name = social-%%Events1.filePath%%-%%DecisionEngineRouter.decisionEngine%%-%%MovementModel.rngSeed%%
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 
-#haggle cam
+
 Scenario.endTime = 987529
+#987529 Haggle Cam
+#274883 Haggle
+#16981816 Reality
 
 btInterface.type = SimpleBroadcastInterface
 btInterface.transmitSpeed = 250k
@@ -28,6 +31,10 @@ Group.speed = 2.5, 4.5
 Group.msgTtl = 1440
 
 Group.nrofHosts = 36
+#36 Haggle Cam
+#41 Haggle
+#97 Reality
+
 Group1.groupID = p
 
 Events.nrof = 2
@@ -37,7 +44,10 @@ Events1.filePath = scenario/Haggle4-Cam-Imote.csv
 Events2.class = MessageEventGenerator
 Events2.interval = 10,50
 Events2.size =250k,500k
-Events2.hosts = 0, 35
+Events2.hosts = 0,35
+# 0,35 Haggle Cam
+# 0,40 Haggle
+# 0,96 Reality
 Events2.prefix = M
 
 
@@ -48,7 +58,7 @@ MovementModel.warmup = 1
 #ReportsInformations
 Report.nrofReports = 5
 Report.warmup = 0
-Report.reportDir = reports/soc3
+Report.reportDir = reports/datasoc
 Report.report1 = MessageStatsReport
 Report.report2 = BufferOccupancyPerDayReport
 Report.report3 = SIRReport
