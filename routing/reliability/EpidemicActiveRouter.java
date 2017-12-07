@@ -51,11 +51,9 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
             if (!receiptBuffer.containsKey(entry.getKey())){
                 receiptBuffer.put(entry.getKey(), entry.getValue());
 
-                // create report if receipt transfered
-               // System.out.println(thisHost.getAddress()+" to "+ peer.getAddress() +" : Receipt "+entry.getKey()+" Transfered");
                 receiptReport.receiptTransfered(entry.getKey());
             }
-            // Create report if receipt delivered
+
             if (entry.getValue().equals(thisHost)){
                 receiptReport.receiptDelivered(entry.getKey());
             }
@@ -64,8 +62,6 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
         for (Message m : thisMessageList){
             /** Delete message that have a receipt */
             if (receiptBuffer.containsKey(m.getId())){
-                // Create report if message removed by receipt
-                //System.out.println(thisHost.getAddress()+" to "+ peer.getAddress() +" : Receipt "+m.getId()+" Deleted");
                 receiptReport.messageRemovedByReceipt(m);
                 messageReadytoDelete.add(m.getId());
             }
@@ -89,7 +85,6 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
             thisHost.deleteMessage(m, false);
         }
         messageReadytoDelete.clear();
-
 
 
         /** Remove message that peer is already have */
@@ -151,11 +146,6 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
     @Override
     public RoutingDecisionEngine replicate() {
         return new EpidemicActiveRouter(this);
-    }
-
-    @Override
-    public boolean shouldDeleteMessage(Message m) {
-        return /*messageReadytoDelete.contains(m.getId())*/ false;
     }
 
     private EpidemicActiveRouter getAnotherRouter(DTNHost peer) {

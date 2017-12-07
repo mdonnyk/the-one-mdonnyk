@@ -3,18 +3,16 @@
 
 
 #Scenario information
-Scenario.name = Test-%%DecisionEngineRouter.decisionEngine%%
+Scenario.name = %%DecisionEngineRouter.decisionEngine%%-haggle-cam
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1 
 
 Scenario.endTime = 987529
 
-
-#Scenario.endTime = 2160000
 #987529 Haggle Cam
 #274883 Haggle
+#342915 Infocom6
 #16981816 Reality
-
 
 Report.warmup = 1
 Scenario.nrofHostGroups = 1
@@ -34,8 +32,7 @@ Group.bufferSize = 20M
 ## Router
 
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = tombstone.EpidemicPassiveRouter
-
+DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicRouter]
 
 ## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240
 Group.msgTtl = 30240
@@ -47,10 +44,11 @@ Group.interface1 = btInterface
 Group1.groupID = A
 Group1.waitTime = 10, 30 
 Group1.speed = 0.8, 1.4
-Group1.nrofHosts = 97
+Group1.nrofHosts = 36
 #36 Haggle Cam
 #41 Haggle
 #97 Reality
+#98 Infocom6
 Group1.nodeLocation = 10, 10
 Group1.movementModel = StationaryMovement
 
@@ -62,14 +60,15 @@ Events.nrof = 2
 Events1.class = ExternalEventsQueue
 Events1.filePath = scenario/Haggle4-Cam-Imote.csv
 #Haggle4-Cam-Imote.csv
-#Haggle3-Infocom5.txt 
+#Haggle3-Infocom5.csv
+#Haggle6-infocom6.csv
 #RealityConnectionTraceFinal.txt
 
 
 ## Message creation parameters
 Events2.class = MessageEventGenerator
-Events2.interval = 58, 62
-#Events2.interval = 290, 310
+#Events2.interval = 58, 62 
+Events2.interval = 290, 310 
 #97, 103
 # 25,30 (~120 texts/hour) 
 #290, 310 (~12 texts/hour)
@@ -77,10 +76,11 @@ Events2.interval = 58, 62
 Events2.size = 10k
 
 ## range of message source/destination address 
-Events2.hosts = 0, 35
+Events2.hosts = 0,35
 # 0,35 Haggle Cam
 # 0,40 Haggle
 # 0,96 Reality
+# 0,97 Infocom6
 Events2.prefix = M
 
 # World's size for Movement Models without implicit size (width, height; meters)
@@ -91,11 +91,15 @@ MovementModel.rngSeed = [2; 8372; 98092; 18293; 777]
 
 
 #ReportsInformations
-Report.nrofReports = 2
+Report.nrofReports = 5
 
-Report.reportDir = reports/testSoc
+Report.reportDir = reports/dataSoc
+
 Report.report1 = MessageStatsReport
-Report.report2 = BufferOccupancyPerHourReport
-#Report.report3 = ReceiptStatsReport
+Report.report2 = BufferOccupancyPerDayReport
+Report.report3 = NodeInfectedReport
+Report.report4 = ReceiptStatsReport
+Report.report5 = DeliveryIntervalReport
+
 
 

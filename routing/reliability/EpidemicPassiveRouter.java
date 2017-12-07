@@ -130,10 +130,7 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 	public boolean shouldDeleteOldMessage(Message m, DTNHost hostReportingOld) {
 		return true;
 	}
-	@Override
-	public boolean shouldDeleteMessage(Message m) {
-		return false;
-	}
+
 
 	@Override
 	public RoutingDecisionEngine replicate() {

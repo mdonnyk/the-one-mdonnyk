@@ -93,8 +93,6 @@ public class DecisionEngineRouter extends ActiveRouter
 
 	protected Set<String> tombstones;
 
-	//Set for scheduling message to Delete
-	//protected Set<Message> readyToDelete;
 
 	/**
 	 * Used to save state machine when new connections are made. See comment in
@@ -121,7 +119,6 @@ public class DecisionEngineRouter extends ActiveRouter
 		if(tombstoning)
 			tombstones = new HashSet<String>(10);
 		conStates = new HashMap<Connection, Integer>(4);
-		//readyToDelete = new HashSet<Message>();
 	}
 
 	public DecisionEngineRouter(DecisionEngineRouter r)
@@ -134,7 +131,6 @@ public class DecisionEngineRouter extends ActiveRouter
 		if(this.tombstoning)
 			tombstones = new HashSet<String>(10);
 		conStates = new HashMap<Connection, Integer>(4);
-		//readyToDelete = new HashSet<Message>();
 	}
 
 	@Override
@@ -204,12 +200,6 @@ public class DecisionEngineRouter extends ActiveRouter
 			Collection<Message> msgs = getMessageCollection();
 			for(Message m : msgs)
 			{
-				//checking Message to Delete;
-				/*if (decider.shouldDeleteMessage(m))
-					readyToDelete.add(m);
-				if(!readyToDelete.contains(m)&&decider.shouldSendMessageToHost(m, otherNode))
-					outgoingMessages.add(new Tuple<Message,Connection>(m, con));*/
-
 				if(decider.shouldSendMessageToHost(m, otherNode))
 					outgoingMessages.add(new Tuple<Message,Connection>(m, con));
 			}
@@ -370,30 +360,10 @@ public class DecisionEngineRouter extends ActiveRouter
 	{
 		//System.out.println(getHost()+"\t:\t"+SimClock.getTime());
 		super.update();
-		//////////////
-		/*for (Message m : readyToDelete) {
-			if (this.isSending(m.getId())) {
-				List<Connection> conList = getHost().getConnections();
-				for (Connection con : conList) {
-					if (con.getMessage()!=null&&con.getMessage().getId()==m.getId()) {
-						con.abortTransfer();
-						break;
-					}
-				}
-			}
-			getHost().deleteMessage(m.getId(), false);
-		}
-		readyToDelete.clear();*/
-
-		///////////////
 
 		if (!canStartTransfer() || isTransferring()) {
 			return; // nothing to transfer or is currently transferring
 		}
-		/*for (Message message : readyToDelete) {
-			if (getMessageCollection().contains(message))
-				deleteMessage(message.getId(), false);
-		}*/
 
 		tryMessagesForConnected(outgoingMessages);
 

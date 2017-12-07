@@ -66,8 +66,4 @@ public class EpidemicFloodRouter implements RoutingDecisionEngine {
         return new EpidemicFloodRouter(this);
     }
 
-    @Override
-    public boolean shouldDeleteMessage(Message m) {
-        return false;
-    }
 }

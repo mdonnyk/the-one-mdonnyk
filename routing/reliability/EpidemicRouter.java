@@ -69,10 +69,6 @@ public class EpidemicRouter implements routing.RoutingDecisionEngine {
     return false;
   }
 
-    public boolean shouldDeleteMessage(Message m) {
-        return false;
-    }
-
     public routing.RoutingDecisionEngine replicate() { return new EpidemicRouter(this);
 
     }

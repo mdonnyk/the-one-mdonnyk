@@ -20,6 +20,7 @@ public class ReceiptStatsReport extends Report {
     private static int nrofMessageDeletedbyReceipt = 0;
 
     public void receiptCreated(Message messageCreateReceipt) {
+       // System.out.println(messageCreateReceipt.getId()+"\tCreated");
         this.nrofReceiptCreated++;
         /** Update list of message that acknowledged and when that message acknowledged*//*
         messageAcknowledged.put(m.getId(), getSimTime());*/
@@ -30,6 +31,7 @@ public class ReceiptStatsReport extends Report {
     }
 
     public void receiptDelivered(String r) {
+       // System.out.println(r+"\tDelivered");
         noReceiptDelivered.add(r);
         nrofReceiptDelivered++;
     }

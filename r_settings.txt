@@ -3,6 +3,7 @@ Scenario.name = Scenario-%%DecisionEngineRouter.decisionEngine%%-%%Group.nrofHos
 Scenario.simulateConnections = true
 Scenario.updateInterval = 0.1
 Scenario.endTime = 259200
+#Scenario.endTime = 86400
 
 btInterface.type = SimpleBroadcastInterface
 btInterface.transmitSpeed = 250k
@@ -39,17 +40,18 @@ Events1.hosts = [0,49; 0,99; 0,199; 0,299; 0,499]
 Events1.prefix = M
 
 
-MovementModel.rngSeed = 2
+MovementModel.rngSeed = 5
 MovementModel.worldSize = 2500, 2500
 MovementModel.warmup = 1
 
 #ReportsInformations
 Report.nrofReports = 5
 Report.warmup = 0
-Report.reportDir = reports/data
+Report.reportDir = reports/test
+#Report.report1 = NodeInfectedReport
 Report.report1 = MessageStatsReport
 Report.report2 = BufferOccupancyPerHourReport
-Report.report3 = SIRReport
+Report.report3 = NodeInfectedReport
 Report.report4 = ReceiptStatsReport
 Report.report5 = DeliveryIntervalReport
 

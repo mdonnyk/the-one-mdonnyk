@@ -110,8 +110,6 @@ public interface RoutingDecisionEngine
 	 */
 	public boolean shouldDeleteOldMessage(Message m, DTNHost hostReportingOld);
 
-	public boolean shouldDeleteMessage(Message m);
-
 	/**
 	 * Duplicates this decision engine.
 	 *

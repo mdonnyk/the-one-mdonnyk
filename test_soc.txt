@@ -2,7 +2,7 @@
 # Rafelck
 
 #Scenario information
-Scenario.name = TestRealityActive
+Scenario.name = TestRealityEpidemic
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 
@@ -31,8 +31,8 @@ btInterface.scanInterval = 120
 Group.bufferSize = 5M
 
 ## Router
-Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
+Group.router = EpidemicRouter
+#DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
 
 ## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240
 Group.msgTtl = 10080
