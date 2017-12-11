@@ -152,4 +152,8 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 		return (EpidemicPassiveRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
 	}
 
+	public Set<String> getReceiptBuffer() {
+		return receiptBuffer;
+	}
+
 }

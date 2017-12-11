@@ -7,7 +7,7 @@ Scenario.name = %%DecisionEngineRouter.decisionEngine%%-haggle-cam
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1 
 
-Scenario.endTime = 987529
+Scenario.endTime = 274883
 
 #987529 Haggle Cam
 #274883 Haggle
@@ -44,7 +44,7 @@ Group.interface1 = btInterface
 Group1.groupID = A
 Group1.waitTime = 10, 30 
 Group1.speed = 0.8, 1.4
-Group1.nrofHosts = 36
+Group1.nrofHosts = 41
 #36 Haggle Cam
 #41 Haggle
 #97 Reality
@@ -58,7 +58,7 @@ Events.nrof = 2
 
 ## Trace information
 Events1.class = ExternalEventsQueue
-Events1.filePath = scenario/Haggle4-Cam-Imote.csv
+Events1.filePath = scenario/Haggle3-Infocom5.csv
 #Haggle4-Cam-Imote.csv
 #Haggle3-Infocom5.csv
 #Haggle6-infocom6.csv
@@ -67,8 +67,8 @@ Events1.filePath = scenario/Haggle4-Cam-Imote.csv
 
 ## Message creation parameters
 Events2.class = MessageEventGenerator
-#Events2.interval = 58, 62 
-Events2.interval = 290, 310 
+Events2.interval = 58, 62
+#Events2.interval = 290, 310
 #97, 103
 # 25,30 (~120 texts/hour) 
 #290, 310 (~12 texts/hour)
@@ -76,7 +76,7 @@ Events2.interval = 290, 310
 Events2.size = 10k
 
 ## range of message source/destination address 
-Events2.hosts = 0,35
+Events2.hosts = 0,40
 # 0,35 Haggle Cam
 # 0,40 Haggle
 # 0,96 Reality
@@ -93,10 +93,10 @@ MovementModel.rngSeed = [2; 8372; 98092; 18293; 777]
 #ReportsInformations
 Report.nrofReports = 5
 
-Report.reportDir = reports/dataSoc
+Report.reportDir = reports/testHaggle
 
 Report.report1 = MessageStatsReport
-Report.report2 = BufferOccupancyPerDayReport
+Report.report2 = BufferOccupancyPerHourReport
 Report.report3 = NodeInfectedReport
 Report.report4 = ReceiptStatsReport
 Report.report5 = DeliveryIntervalReport

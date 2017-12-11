@@ -28,7 +28,7 @@ Group.waitTime = 0, 120
 Group.nrofInterfaces = 1
 Group.interface1 = btInterface
 Group.speed = 2.5, 4.5
-Group.msgTtl = 30240
+Group.msgTtl = 1440
 
 Group.nrofHosts = 97
 #36 Haggle Cam
@@ -64,7 +64,7 @@ Report.warmup = 0
 Report.reportDir = reports/datasoc
 Report.report1 = MessageStatsReport
 Report.report2 = BufferOccupancyPerDayReport
-Report.report3 = NodeInfectedReport
+Report.report3 = SIRReport
 Report.report4 = ReceiptStatsReport
 Report.report5 = DeliveryIntervalReport
 
