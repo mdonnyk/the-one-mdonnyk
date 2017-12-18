@@ -17,8 +17,8 @@ Group.router = DecisionEngineRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicFloodRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
-#DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter]
-DecisionEngineRouter.decisionEngine = [reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter]
+DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter]
+#DecisionEngineRouter.decisionEngine = [reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter]
 #DecisionEngineRouter.decisionEngine = [reliability.EpidemicRouter; reliability.EpidemicRouter; reliability.EpidemicRouter; reliability.EpidemicRouter; reliability.EpidemicRouter]
 
 Group.bufferSize = 50M
@@ -45,13 +45,15 @@ MovementModel.worldSize = 2500, 2500
 MovementModel.warmup = 1
 
 #ReportsInformations
-Report.nrofReports = 4
+Report.nrofReports = 6
 Report.warmup = 0
-Report.reportDir = reports/testSIR
+Report.reportDir = reports/SUBMIT1
 Report.report1 = MessageStatsReport
-Report.report2 = NodeInfectedReport
-Report.report3 = NodeSusceptibleReportP
-Report.report4 = NodeRecoverReportP
+Report.report2 = BufferOccupancyPerHourReport
+Report.report3 = ReceiptStatsReport
+Report.report4 = NodeInfectedReport
+Report.report5 = NodeSusceptibleReport
+Report.report6 = NodeRecoverReport
 
 Optimization.cellSizeMult = 5
 Optimization.randomizeUpdateOrder = true

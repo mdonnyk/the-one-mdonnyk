@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class NodeRecoverReport extends Report implements UpdateListener{
     public static final String REPORT_INTERVAL = "Interval";
-    public static final int DEFAULT_REPORT_INTERVAL = 3600;
+    public static final int DEFAULT_REPORT_INTERVAL = 86400;
     public static final int DEFAULT_NO_MESSAGE_REPORTED = 500;
     public static final int DEFAULT_MAX_COUNTER = 1000;
     private double lastRecord = Double.MIN_VALUE;

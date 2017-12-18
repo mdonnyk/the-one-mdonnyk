@@ -1,13 +1,12 @@
 
 # Setting test for ONE intact Connection Mode
 
-
 #Scenario information
-Scenario.name = %%DecisionEngineRouter.decisionEngine%%-haggle-cam
+Scenario.name = %%DecisionEngineRouter.decisionEngine%%-reality
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1 
 
-Scenario.endTime = 274883
+Scenario.endTime = 16981816
 
 #987529 Haggle Cam
 #274883 Haggle
@@ -32,9 +31,10 @@ Group.bufferSize = 20M
 ## Router
 
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicRouter]
+#DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter]
+DecisionEngineRouter.decisionEngine = reliability.EpidemicRouter
 
-## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240
+## TTL 24 hours=1440 (Haggle), 1 week= 10080, 3 weeks= 30240
 Group.msgTtl = 30240
 Group.nrofInterfaces = 1
 Group.interface1 = btInterface
@@ -44,7 +44,7 @@ Group.interface1 = btInterface
 Group1.groupID = A
 Group1.waitTime = 10, 30 
 Group1.speed = 0.8, 1.4
-Group1.nrofHosts = 41
+Group1.nrofHosts = 97
 #36 Haggle Cam
 #41 Haggle
 #97 Reality
@@ -58,7 +58,7 @@ Events.nrof = 2
 
 ## Trace information
 Events1.class = ExternalEventsQueue
-Events1.filePath = scenario/Haggle3-Infocom5.csv
+Events1.filePath = scenario/RealityConnectionTraceFinal.txt
 #Haggle4-Cam-Imote.csv
 #Haggle3-Infocom5.csv
 #Haggle6-infocom6.csv
@@ -76,7 +76,7 @@ Events2.interval = 58, 62
 Events2.size = 10k
 
 ## range of message source/destination address 
-Events2.hosts = 0,40
+Events2.hosts = 0,96
 # 0,35 Haggle Cam
 # 0,40 Haggle
 # 0,96 Reality
@@ -87,19 +87,19 @@ Events2.prefix = M
 MovementModel.worldSize = 100, 100
 
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = [2; 8372; 98092; 18293; 777]
+MovementModel.rngSeed = [2; 2; 98092; 18293; 777]
 
 
 #ReportsInformations
-Report.nrofReports = 5
-
-Report.reportDir = reports/testHaggle
-
+Report.nrofReports = 4
+Report.warmup = 0
+Report.reportDir = reports/SUBMITSOC3
 Report.report1 = MessageStatsReport
-Report.report2 = BufferOccupancyPerHourReport
-Report.report3 = NodeInfectedReport
-Report.report4 = ReceiptStatsReport
-Report.report5 = DeliveryIntervalReport
+Report.report2 = BufferOccupancyPerDayReport
+Report.report3 = ReceiptStatsReport
+Report.report4 = NodeInfectedReport
+Report.report5 = NodeSusceptibleReport
+Report.report6 = NodeRecoverReport
 
 
 
