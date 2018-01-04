@@ -94,6 +94,8 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 
 			/** Trigger report */
 			receiptReport.receiptTransfered(m.getId());
+
+
 			receiptReport.messageRemovedByReceipt(m);
 
 			/** Check that peer is receipt target  */
@@ -115,6 +117,7 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 				receiptBuffer.add(m.getId());
 				partnerRouter.receiptBuffer.add(m.getId());
 			}
+
 			return true;
 		}
 	}

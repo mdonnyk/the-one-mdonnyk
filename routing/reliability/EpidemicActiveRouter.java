@@ -62,6 +62,7 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
         for (Message m : thisMessageList){
             /** Delete message that have a receipt */
             if (receiptBuffer.containsKey(m.getId())){
+
                 receiptReport.messageRemovedByReceipt(m);
                 messageReadytoDelete.add(m.getId());
             }
@@ -120,11 +121,15 @@ public class EpidemicActiveRouter implements RoutingDecisionEngine {
 
     @Override
     public boolean shouldSaveReceivedMessage(Message m, DTNHost thisHost) {
+
+
         if (isFinalDest(m, thisHost) && !receiptBuffer.containsKey(m.getId() )){
             // Report if receipt created
             receiptReport.receiptCreated(m);
             receiptBuffer.put(m.getId(), m.getFrom());
         }
+
+
         return true;
     }
 

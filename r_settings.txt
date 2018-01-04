@@ -15,9 +15,9 @@ Group.movementModel = RandomWaypoint
 Group.router = DecisionEngineRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicFloodRouter
-#DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveRouter
+DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
-DecisionEngineRouter.decisionEngine = reliability.EpidemicRouter
+#DecisionEngineRouter.decisionEngine = reliability.EpidemicRouter
 #DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter; reliability.EpidemicActiveRouter]
 #DecisionEngineRouter.decisionEngine = [reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveRouter]
 #DecisionEngineRouter.decisionEngine = [reliability.EpidemicRouter; reliability.EpidemicRouter; reliability.EpidemicRouter; reliability.EpidemicRouter; reliability.EpidemicRouter]
@@ -37,8 +37,8 @@ Events.nrof = 1
 Events1.class = MessageEventGenerator
 Events1.interval = 100,150
 Events1.size = 250k,500k
-Events1.hosts = [0,49; 0,99; 0,199; 0,299; 0,499]
-#Events1.hosts = 0,199
+#Events1.hosts = [0,49; 0,99; 0,199; 0,299; 0,499]
+Events1.hosts = 0,199
 Events1.prefix = M
 
 
@@ -47,9 +47,9 @@ MovementModel.worldSize = 2500, 2500
 MovementModel.warmup = 1
 
 #ReportsInformations
-Report.nrofReports = 1
+Report.nrofReports = 2
 Report.warmup = 0
-Report.reportDir = reports/TestSIR
+Report.reportDir = reports/TestLab1
 #Report.report1 = MessageStatsReport
 #Report.report2 = BufferOccupancyPerHourReport
 #Report.report3 = ReceiptStatsReport
@@ -57,7 +57,9 @@ Report.reportDir = reports/TestSIR
 #Report.report5 = NodeSusceptibleReport
 #Report.report6 = NodeRecoverReport
 
-Report.report1 = NodeInfectedReport2
+Report.report1 = BufferOccupancyPerHourReport
+Report.report2 = SIRReportP
+
 
 Optimization.cellSizeMult = 5
 Optimization.randomizeUpdateOrder = true

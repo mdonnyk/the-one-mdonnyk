@@ -1,27 +1,35 @@
 package report;
+
 import core.DTNHost;
 import core.Message;
 import core.Settings;
 import core.UpdateListener;
+import routing.DecisionEngineRouter;
+import routing.MessageRouter;
+import routing.reliability.EpidemicActiveRouter;
+import routing.reliability.EpidemicPassiveRouter;
 
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  *
- * @author Adi
+ * @author Michael Donny Kusuma
  */
 public class SIRReport extends Report implements UpdateListener{
     public static final String REPORT_INTERVAL = "Interval";
-    public static final int DEFAULT_REPORT_INTERVAL = 3600;
-    private double lastRecord = Double.MIN_VALUE;
+    public static final int DEFAULT_REPORT_INTERVAL = 3600 ;
+
+
+    private double lastRecord;
+    private String messageReported = "M209";
+
+    private Map<DTNHost, Boolean> nodeState = new HashMap<>();
+
+    private List<Integer> nodeInfective = new ArrayList<>();
+    private List<Integer> nodeSuspected = new ArrayList<>();
+    private List<Integer> nodeRemoved = new ArrayList<>();
+
     private int interval;
-    private Map<String, Map<Integer, Integer>> susceptible = new HashMap<String, Map<Integer, Integer>>();
-    private Map<String, Map<Integer, Integer>> infective = new HashMap<String, Map<Integer, Integer>>();
-    private Map<Message, Map<Integer, Integer>> removed = new HashMap<Message, Map<Integer, Integer>>();
     private int updateCounter = 0;
 
     public SIRReport() {
@@ -35,75 +43,163 @@ public class SIRReport extends Report implements UpdateListener{
         if (interval < 0) {
             interval = DEFAULT_REPORT_INTERVAL;
         }
+
+        initInfective();
     }
     @Override
     public void updated(List<DTNHost> hosts) {
         double simTime = getSimTime();
-        if (isWarmup()) {
-            return;
-        }
-        if (simTime - lastRecord >= interval) {
-            printLine(hosts);
-            System.out.println(updateCounter);
-            updateCounter++;
-            this.lastRecord = simTime - simTime % interval;
-        }
+            if (lastRecord>0){
+
+                if ((simTime - lastRecord >= interval)) {
+                    //compute host carry message
+
+                    computeNumberofHosts(hosts , messageReported);
+
+                    lastRecord = simTime - simTime % interval;
+                }
+            }
+            else {
+                findInitTime(hosts, messageReported);
+            }
+
     }
-    private void printLine(List<DTNHost> hosts) {
-        int nrofHost = hosts.size();
-        for (DTNHost host : hosts) {
 
-            /*EpidemicActiveRouter hostRouter = this.getRouter(host);
-            Set<Message> receiptBuffer = hostRouter.getReceiptBuffer();
+    private void findInitTime(List<DTNHost> hosts, String idMessage){
 
-            for (Message r : receiptBuffer){
-
-            }*/
-
-            for (Message m : host.getMessageCollection()) {
-                Map<Integer, Integer> temp;
-                if (infective.containsKey(m.getId())) {
-                    temp = infective.get(m.getId());
-                    if (temp.containsKey(updateCounter)) {
-                        temp.replace(updateCounter, (temp.get(updateCounter)+1));
-                    } else {
-                        temp.put(updateCounter, 1);
-                    }
-                    infective.replace(m.getId(), temp);
-                } else {
-                    temp = new HashMap<>();
-                    temp.put(updateCounter, 1);
-                    infective.put(m.getId(), temp);
+        for (DTNHost host : hosts){
+            for (Message m : host.getMessageCollection()){
+                if (idMessage.equals(m.getId())){
+                    lastRecord = m.getCreationTime();
                 }
             }
         }
     }
+
+    private void computeNumberofHosts(List<DTNHost> hosts, String idMessage){
+        int s = 0;
+        int i = 0;
+        int r = 0;
+
+        for (DTNHost host : hosts){
+
+           /* // Initialization of state
+            if (!nodeState.containsKey(host)){
+
+                // set to "susceptible"
+                nodeState.put(host, -1);
+            }
+
+            // Checking state
+            boolean currentState = false;
+            for (Message m : host.getMessageCollection()){
+                if (idMessage.equals(m.getId())){
+                    currentState = true;
+                }
+            }
+
+            // Deciding current state
+            if (currentState){
+                // set to "infected"
+                nodeState.put(host, 1);
+            }
+
+            else {
+                if (nodeState.get(host)<0){
+                    // set to removed
+                    nodeState.put(host,0);
+                }
+            }
+
+
+            // count state
+            if (nodeState.get(host)<0){
+                //s++;
+            }
+            else if (nodeState.get(host)>0){
+                i++;
+            }
+            else if (nodeState.get(host)==0){
+                //r++;
+            }
+*/
+           //init
+           if (!nodeState.containsKey(host)){
+
+
+                nodeState.put(host, false);
+            }
+
+           boolean infected = false;
+           for (Message m : host.getMessageCollection()){
+                if (idMessage.equals(m.getId())){
+                    infected = true;
+                }
+            }
+
+            if (infected){
+               i++;
+
+               if (!nodeState.get(host)){
+                   nodeState.put(host, true);
+               }
+
+            }
+            else {
+                if (nodeState.get(host)){
+                    r++;
+                }
+                else {
+                    s++;
+                }
+            }
+        }
+        nodeInfective.add(i);
+        nodeSuspected.add(s);
+        nodeRemoved.add(r);
+
+    }
+
+
     @Override
     public void done() {
-        for (Map.Entry<String, Map<Integer, Integer>> entry : infective.entrySet()) {
-            Map<Integer, Integer> value = entry.getValue();
-            for (int i = 0; i < updateCounter; i++) {
-                if (value.containsKey(i)) {
-                    continue;
-                }
-                value.put(i, 0);
-            }
-            infective.replace(entry.getKey(), value);
+        String print = "SIR Report";
+        print = print +"\nS";
+
+        print = print +"\n"+messageReported;
+
+        for (int val : nodeSuspected){
+            print = print +"\t"+ val;
         }
-        for (Map.Entry<String, Map<Integer, Integer>> entry : infective.entrySet()) {
-            String printHost = entry.getKey()+"";
-            Map<Integer, Integer> value = entry.getValue();
-            for (Map.Entry<Integer, Integer> values : value.entrySet()) {
-                printHost = printHost +"\t"+values.getValue();
-            }
-            write(printHost);
+
+        print = print +"\nI";
+        print = print +"\n"+messageReported;
+
+        for (int val : nodeInfective){
+            print = print +"\t"+ val;
         }
+
+        print = print +"\nR";
+        print = print +"\n"+messageReported;
+
+        for (int val : nodeRemoved){
+            print = print +"\t"+ val;
+        }
+        write(print);
+
+
 	super.done();
     }
 
-    /*private EpidemicActiveRouter getRouter(DTNHost peer) {
+    // Create init object for message that reported
+    private void initInfective(){
+        lastRecord = -1;
+    }
+
+    private EpidemicPassiveRouter getRouter(DTNHost peer) {
         MessageRouter otherRouter = peer.getRouter();
         assert otherRouter instanceof DecisionEngineRouter : "This router only works with other routers of same type";
-        return (EpidemicActiveRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
-    }*/
+        return (EpidemicPassiveRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
+    }
+
 }
