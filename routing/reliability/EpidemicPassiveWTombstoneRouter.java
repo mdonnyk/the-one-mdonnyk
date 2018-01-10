@@ -17,21 +17,24 @@ import java.util.*;
  * Universitas Sanata Dharma
  */
 
-public class EpidemicPassiveRouter implements RoutingDecisionEngine {
+public class EpidemicPassiveWTombstoneRouter implements RoutingDecisionEngine {
 	/** Set contain buffer for receipt */
 	private Set<String> receiptBuffer;
+	/** Set x */
+	private Set<String> tombstone;
 	/** Set contain summary vectors */
 	private List<String> request;
 	/** Report Object */
 	private ReceiptStatsReport receiptReport;
 
-	public EpidemicPassiveRouter(Settings s) {
+	public EpidemicPassiveWTombstoneRouter(Settings s) {
 
 	}
 
-	protected EpidemicPassiveRouter(EpidemicPassiveRouter proto) {
+	protected EpidemicPassiveWTombstoneRouter(EpidemicPassiveWTombstoneRouter proto) {
 		this.request = new ArrayList<>();
 		this.receiptBuffer = new HashSet<>();
+		this.tombstone = new HashSet<>();
 		this.receiptReport = new ReceiptStatsReport();
 	}
 
@@ -41,14 +44,22 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 		Collection <Message> thisMessages = thisHost.getMessageCollection();
 		Collection <Message> peerMessages = peer.getMessageCollection();
 
+		/** Get peer router */
+		EpidemicPassiveWTombstoneRouter partnerRouter = this.getAnotherRouter(peer);
+		Set<String> peerTombstone = partnerRouter.getTombstone();
+
 		/** Clear summary vector for this connection */
 		request.clear();
 
 		/** Check peer and this host summary vector, exchange if not same  */
 		if (thisMessages.hashCode() != peerMessages.hashCode()) {
 
+
+
 			/** Determine which message is needed for peer host */
-			exchangeSummaryVector(peerMessages, thisMessages);
+
+
+			exchangeSummaryVector(peerMessages, thisMessages, peerTombstone);
 		}
 	}
 	@Override
@@ -76,7 +87,7 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 		boolean acknowledged = false;
 
 		/** Get peer router */
-		EpidemicPassiveRouter partnerRouter = this.getAnotherRouter(peer);
+		EpidemicPassiveWTombstoneRouter partnerRouter = this.getAnotherRouter(peer);
 
 		/** Check whether message is acknowledged */
 		for (String r : receiptBuffer){
@@ -121,6 +132,7 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 				partnerRouter.receiptBuffer.add(m.getId());
 			}
 
+			tombstone.add(m.getId());
 			return true;
 		}
 	}
@@ -140,26 +152,30 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 
 	@Override
 	public RoutingDecisionEngine replicate() {
-		return new EpidemicPassiveRouter(this);
+		return new EpidemicPassiveWTombstoneRouter(this);
 	}
 
-	private void exchangeSummaryVector(Collection <Message> peerMessages, Collection <Message> thisHostMessages) {
+	private void exchangeSummaryVector(Collection <Message> peerMessages, Collection <Message> thisHostMessages, Set<String> peerTombstone) {
 		/** Check for all this host message peer host didn't have, add to summary vector */
 		for (Message message : thisHostMessages) {
-			if (!peerMessages.contains(message)) {
+			if (!peerMessages.contains(message) && !peerTombstone.contains(message.getId())) {
 				request.add(message.getId());
 			}
 		}
+
 	}
 
-	private EpidemicPassiveRouter getAnotherRouter(DTNHost peer) {
+	private EpidemicPassiveWTombstoneRouter getAnotherRouter(DTNHost peer) {
 		MessageRouter otherRouter = peer.getRouter();
 		assert otherRouter instanceof DecisionEngineRouter : "This router only works with other routers of same type";
-		return (EpidemicPassiveRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
+		return (EpidemicPassiveWTombstoneRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
 	}
 
 	public Set<String> getReceiptBuffer() {
 		return receiptBuffer;
 	}
 
+	public Set<String> getTombstone() {
+		return tombstone;
+	}
 }

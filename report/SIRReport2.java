@@ -4,25 +4,33 @@ import core.DTNHost;
 import core.Message;
 import core.Settings;
 import core.UpdateListener;
+import routing.DecisionEngineRouter;
+import routing.MessageRouter;
+import routing.reliability.EpidemicActiveRouter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author Michael Donny Kusuma
  * Sanata Dharma University
  */
-public class SIRReport extends Report implements UpdateListener{
+public class SIRReport2 extends Report implements UpdateListener{
     public static final String REPORT_INTERVAL = "Interval";
     //1 jam
     public static final int DEFAULT_REPORT_INTERVAL = 3600 ;
     private double lastRecord;
 
     // Message need to reported
-    private String messageReported = "M69";
+    private String messageReported = "M111";
 
     // Status node to the message, true if node is infected by the message
     private Map<DTNHost, Boolean> nodeState = new HashMap<>();
+
+
 
     private List<Integer> nodeInfective = new ArrayList<>();
     private List<Integer> nodeSuspected = new ArrayList<>();
@@ -30,7 +38,7 @@ public class SIRReport extends Report implements UpdateListener{
 
     private int interval;
 
-    public SIRReport() {
+    public SIRReport2() {
         super();
         Settings settings = getSettings();
         if (settings.contains(REPORT_INTERVAL)) {
@@ -51,7 +59,6 @@ public class SIRReport extends Report implements UpdateListener{
 
                 if ((simTime - lastRecord >= interval)) {
                     //compute host carry message
-
                     computeNumberofHosts(hosts , messageReported);
 
                     lastRecord = simTime - simTime % interval;
@@ -81,8 +88,10 @@ public class SIRReport extends Report implements UpdateListener{
 
         for (DTNHost host : hosts){
 
+            EpidemicActiveRouter thisRouter = this.getRouter(host);
+            Map<String, DTNHost> receiptBuffer = thisRouter.getReceiptBuffer();
 
-           if (!nodeState.containsKey(host)){
+           /*if (!nodeState.containsKey(host)){
 
                // Every node is suspect at first
                 nodeState.put(host, false);
@@ -114,7 +123,27 @@ public class SIRReport extends Report implements UpdateListener{
                 else {
                     s++;
                 }
+            }*/
+
+            boolean infected = false;
+            for (Message m : host.getMessageCollection()){
+                if (idMessage.equals(m.getId())){
+                    infected = true;
+                }
             }
+
+            if (infected){
+                i++;
+            }
+            else {
+                if (receiptBuffer.containsKey(idMessage)){
+                    r++;
+                }
+                else {
+                    s++;
+                }
+            }
+
         }
 
         nodeInfective.add(i);
@@ -157,6 +186,12 @@ public class SIRReport extends Report implements UpdateListener{
     // Create init object for message that reported
     private void initInfective(){
         lastRecord = -1;
+    }
+
+    private EpidemicActiveRouter getRouter (DTNHost host) {
+        MessageRouter otherRouter = host.getRouter();
+        assert otherRouter instanceof DecisionEngineRouter : "This router only works with other routers of same type";
+        return (EpidemicActiveRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
     }
 
 }
