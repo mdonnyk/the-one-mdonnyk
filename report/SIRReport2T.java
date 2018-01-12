@@ -88,6 +88,7 @@ public class SIRReport2T extends Report implements UpdateListener{
 
             EpidemicPassiveWTombstoneRouter thisRouter = this.getRouter(host);
             Set<String> receiptBuffer = thisRouter.getReceiptBuffer();
+            Set<String> tombstone = thisRouter.getTombstone();
 
            /*if (!nodeState.containsKey(host)){
 
@@ -133,11 +134,14 @@ public class SIRReport2T extends Report implements UpdateListener{
             if (infected){
                 i++;
             }
-            else if (!infected && receiptBuffer.contains(idMessage)){
-                r++;
-            }
+
             else {
-                s++;
+                if (receiptBuffer.contains(idMessage) || tombstone.contains(idMessage)){
+                    r++;
+                }
+                else {
+                    s++;
+                }
             }
 
         }

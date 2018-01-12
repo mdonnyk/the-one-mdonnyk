@@ -97,9 +97,9 @@ MovementModel.rngSeed = [2; 2; 2; 98092; 18293; 777]
 #ReportsInformations
 Report.nrofReports = 1
 Report.warmup = 0
-Report.reportDir = reports/TOMB_SOC
+Report.reportDir = reports/SIR_CAM_cari_bagus
 #Report.report1 = MessageStatsReport
-Report.report1 = BufferOccupancyPerHourReport
+Report.report1 = SIRReport2T
 #Report.report3 = ReceiptStatsReport
 #Report.report4 = SIRReport2T
 

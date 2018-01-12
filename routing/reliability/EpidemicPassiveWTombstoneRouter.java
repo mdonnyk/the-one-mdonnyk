@@ -18,13 +18,13 @@ import java.util.*;
  */
 
 public class EpidemicPassiveWTombstoneRouter implements RoutingDecisionEngine {
-	/** Set contain buffer for receipt */
+	/** Buffer for receipt */
 	private Set<String> receiptBuffer;
-	/** Set x */
+	/** Message ever received */
 	private Set<String> tombstone;
-	/** Set contain summary vectors */
+	/** Peer's request to this node  */
 	private List<String> request;
-	/** Report Object */
+	/** Report */
 	private ReceiptStatsReport receiptReport;
 
 	public EpidemicPassiveWTombstoneRouter(Settings s) {
@@ -44,21 +44,17 @@ public class EpidemicPassiveWTombstoneRouter implements RoutingDecisionEngine {
 		Collection <Message> thisMessages = thisHost.getMessageCollection();
 		Collection <Message> peerMessages = peer.getMessageCollection();
 
-		/** Get peer router */
+		/** Get peer's tombstone */
 		EpidemicPassiveWTombstoneRouter partnerRouter = this.getAnotherRouter(peer);
 		Set<String> peerTombstone = partnerRouter.getTombstone();
 
-		/** Clear summary vector for this connection */
+		/** Clean up request for this connection */
 		request.clear();
 
 		/** Check peer and this host summary vector, exchange if not same  */
 		if (thisMessages.hashCode() != peerMessages.hashCode()) {
 
-
-
-			/** Determine which message is needed for peer host */
-
-
+			/** Determine which message is needed for peer */
 			exchangeSummaryVector(peerMessages, thisMessages, peerTombstone);
 		}
 	}
@@ -84,19 +80,18 @@ public class EpidemicPassiveWTombstoneRouter implements RoutingDecisionEngine {
 		List<DTNHost> hostRelayM = m.getHops();
 		DTNHost peer = hostRelayM.get(hostRelayM.size()-2);
 
-		boolean acknowledged = false;
-
 		/** Get peer router */
 		EpidemicPassiveWTombstoneRouter partnerRouter = this.getAnotherRouter(peer);
 
 		/** Check whether message is acknowledged */
+		/*boolean acknowledged = false;
 		for (String r : receiptBuffer){
 			if (r.equals(m.getId())){
 				acknowledged = true;
 			}
-		}
+		}*/
 
-		if (acknowledged){
+		if (receiptBuffer.contains(m.getId())){
 			/** Tell peer router that message m is acknowledged, transfer receipt */
 			partnerRouter.receiptBuffer.add(m.getId());
 
@@ -156,13 +151,12 @@ public class EpidemicPassiveWTombstoneRouter implements RoutingDecisionEngine {
 	}
 
 	private void exchangeSummaryVector(Collection <Message> peerMessages, Collection <Message> thisHostMessages, Set<String> peerTombstone) {
-		/** Check for all this host message peer host didn't have, add to summary vector */
+		/** Check every message that peer needed */
 		for (Message message : thisHostMessages) {
 			if (!peerMessages.contains(message) && !peerTombstone.contains(message.getId())) {
 				request.add(message.getId());
 			}
 		}
-
 	}
 
 	private EpidemicPassiveWTombstoneRouter getAnotherRouter(DTNHost peer) {

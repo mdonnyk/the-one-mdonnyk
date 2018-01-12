@@ -25,7 +25,7 @@ public class SIRReport2 extends Report implements UpdateListener{
     private double lastRecord;
 
     // Message need to reported
-    private String messageReported = "M111";
+    private String messageReported = "M666";
 
     // Status node to the message, true if node is infected by the message
     private Map<DTNHost, Boolean> nodeState = new HashMap<>();

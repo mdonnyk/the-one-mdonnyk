@@ -79,13 +79,8 @@ public class EpidemicPassiveRouter implements RoutingDecisionEngine {
 		EpidemicPassiveRouter partnerRouter = this.getAnotherRouter(peer);
 
 		/** Check whether message is acknowledged */
-		for (String r : receiptBuffer){
-			if (r.equals(m.getId())){
-				acknowledged = true;
-			}
-		}
 
-		if (acknowledged){
+		if (receiptBuffer.contains(m.getId())){
 			/** Tell peer router that message m is acknowledged, transfer receipt */
 			partnerRouter.receiptBuffer.add(m.getId());
 
