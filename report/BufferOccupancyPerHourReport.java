@@ -56,7 +56,7 @@ public class BufferOccupancyPerHourReport extends Report implements UpdateListen
 		if (simTime - lastRecord >= interval) {
 			//lastRecord = SimClock.getTime();
 			printLine(hosts);
-			System.out.println("Simulation time :"+updateCounter+" hours");
+			//System.out.println("Simulation time :"+updateCounter+" hours");
 			updateCounter++; // new added
 
 			this.lastRecord = simTime - simTime % interval;
@@ -89,7 +89,7 @@ public class BufferOccupancyPerHourReport extends Report implements UpdateListen
 			}
 		}
 
-		System.out.println("AVG buffer = "+(jumlah/count));
+		//System.out.println("AVG buffer = "+(jumlah/count));
 	}
 
 	@Override

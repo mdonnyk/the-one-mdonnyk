@@ -90,40 +90,6 @@ public class SIRReport2T extends Report implements UpdateListener{
             Set<String> receiptBuffer = thisRouter.getReceiptBuffer();
             Set<String> tombstone = thisRouter.getTombstone();
 
-           /*if (!nodeState.containsKey(host)){
-
-               // Every node is suspect at first
-                nodeState.put(host, false);
-            }
-
-            // Every node is suspected false
-           boolean infected = false;
-
-           // Check if node is infected
-           for (Message m : host.getMessageCollection()){
-                if (idMessage.equals(m.getId())){
-                    infected = true;
-                }
-            }
-
-            // Determine node status
-            if (infected){
-               i++;
-
-               if (!nodeState.get(host)){
-                   nodeState.put(host, true);
-               }
-
-            }
-            else {
-                if (nodeState.get(host)){
-                    r++;
-                }
-                else {
-                    s++;
-                }
-            }*/
-
             boolean infected = false;
             for (Message m : host.getMessageCollection()){
                 if (idMessage.equals(m.getId())){

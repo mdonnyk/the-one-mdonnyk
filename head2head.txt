@@ -1,0 +1,61 @@
+## Scenario for random
+Scenario.name = Scenario-test-%%DecisionEngineRouter.decisionEngine%%-%%Group.nrofHosts%%-%%SIR.numberOfMessage%%
+Scenario.simulateConnections = true
+
+Scenario.updateInterval = 0.1
+# 987529 == soc
+Scenario.endTime = 987529
+
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+btInterface.scanInterval = 120
+
+Scenario.nrofHostGroups = 1
+
+Group.movementModel = RandomWaypoint
+Group.router = DecisionEngineRouter
+
+#3
+DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
+#DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter ; reliability.EpidemicPassiveWTombstoneRouter]
+
+
+Group.bufferSize = 20M
+Group.waitTime = 10, 30
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+Group.speed = 0.8, 1.4
+Group.msgTtl = 10080
+
+#Group.nrofHosts = [50; 100; 200; 300; 500]
+Group.nrofHosts = 36
+Group1.groupID = p
+
+Events.nrof = 1
+Events1.class = MessageEventGenerator
+Events1.interval = 58, 62
+Events1.size = 10k
+#Events1.hosts = [0,49; 0,99; 0,199; 0,299; 0,499]
+Events1.hosts = 0,35
+Events1.prefix = M
+
+
+MovementModel.rngSeed = 2
+MovementModel.worldSize = 6500, 6500
+MovementModel.warmup = 1
+
+#ReportsInformations
+Report.nrofReports = 4
+Report.warmup = 0
+Report.reportDir = reports/HeadToHead
+Report.report1 = MessageStatsReport
+Report.report2 = BufferOccupancyPerHourReport
+Report.report3 = ReceiptStatsReport
+Report.report4 = SIRReport
+#SIR Report
+SIR.numberOfMessage = 666
+SIR.interval = 3600
+
+Optimization.cellSizeMult = 5
+Optimization.randomizeUpdateOrder = true

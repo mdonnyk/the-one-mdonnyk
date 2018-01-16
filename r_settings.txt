@@ -33,6 +33,7 @@ Group.waitTime = 0, 120
 Group.nrofInterfaces = 1
 Group.interface1 = btInterface
 Group.speed = 2.5, 4.5
+#1440 minutes = 1d
 Group.msgTtl = 1440
 
 #Group.nrofHosts = [50; 100; 200; 300; 500]

@@ -89,39 +89,6 @@ public class SIRReport2P extends Report implements UpdateListener{
             EpidemicPassiveRouter thisRouter = this.getRouter(host);
             Set<String> receiptBuffer = thisRouter.getReceiptBuffer();
 
-           /*if (!nodeState.containsKey(host)){
-
-               // Every node is suspect at first
-                nodeState.put(host, false);
-            }
-
-            // Every node is suspected false
-           boolean infected = false;
-
-           // Check if node is infected
-           for (Message m : host.getMessageCollection()){
-                if (idMessage.equals(m.getId())){
-                    infected = true;
-                }
-            }
-
-            // Determine node status
-            if (infected){
-               i++;
-
-               if (!nodeState.get(host)){
-                   nodeState.put(host, true);
-               }
-
-            }
-            else {
-                if (nodeState.get(host)){
-                    r++;
-                }
-                else {
-                    s++;
-                }
-            }*/
 
             boolean infected = false;
             for (Message m : host.getMessageCollection()){
