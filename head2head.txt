@@ -17,8 +17,8 @@ Group.movementModel = RandomWaypoint
 Group.router = DecisionEngineRouter
 
 #3
-DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
-#DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter ; reliability.EpidemicPassiveWTombstoneRouter]
+#DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveWTombstoneRouter
+DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter ; reliability.EpidemicPassiveWTombstoneRouter]
 
 
 Group.bufferSize = 20M
@@ -26,7 +26,7 @@ Group.waitTime = 10, 30
 Group.nrofInterfaces = 1
 Group.interface1 = btInterface
 Group.speed = 0.8, 1.4
-Group.msgTtl = 10080
+Group.msgTtl = 30240
 
 #Group.nrofHosts = [50; 100; 200; 300; 500]
 Group.nrofHosts = 36
@@ -46,16 +46,16 @@ MovementModel.worldSize = 6500, 6500
 MovementModel.warmup = 1
 
 #ReportsInformations
-Report.nrofReports = 4
+Report.nrofReports = 1
 Report.warmup = 0
-Report.reportDir = reports/HeadToHead
-Report.report1 = MessageStatsReport
-Report.report2 = BufferOccupancyPerHourReport
-Report.report3 = ReceiptStatsReport
-Report.report4 = SIRReport
+Report.reportDir = reports/H2Hbuffer
+Report.report1 = AverageBufferOccupancyReport
+#Report.report2 = BufferOccupancyPerHourReport
+#Report.report3 = ReceiptStatsReport
+#Report.report4 = SIRReport
 #SIR Report
 SIR.numberOfMessage = 666
-SIR.interval = 3600
+SIR.interval = 604800
 
 Optimization.cellSizeMult = 5
 Optimization.randomizeUpdateOrder = true

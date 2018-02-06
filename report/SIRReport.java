@@ -6,9 +6,7 @@ import core.Settings;
 import core.UpdateListener;
 import routing.DecisionEngineRouter;
 import routing.MessageRouter;
-import routing.reliability.EpidemicActiveRouter;
-import routing.reliability.EpidemicPassiveRouter;
-import routing.reliability.EpidemicPassiveWTombstoneRouter;
+import routing.reliability.*;
 
 import java.util.*;
 
@@ -45,14 +43,7 @@ public class SIRReport extends Report implements UpdateListener{
         Settings SIRSettings = new Settings("SIR");
 
         Settings settings = getSettings();
-        if (settings.contains(REPORT_INTERVAL)) {
-            interval = settings.getInt(REPORT_INTERVAL);
-        } else {
-            interval = -1;
-        }
-        if (interval < 0) {
-            interval = DEFAULT_REPORT_INTERVAL;
-        }
+
 
         String routingEngine = routeSettings.getSetting("decisionEngine");
 
@@ -65,10 +56,22 @@ public class SIRReport extends Report implements UpdateListener{
         else if (routingEngine.equals("reliability.EpidemicPassiveWTombstoneRouter")){
             ROUTING_ENGINE = 3;
         }
+        else if (routingEngine.equals("reliability.EpidemicActiveWTombstoneRouter")){
+            ROUTING_ENGINE = 4;
+        }
 
         messageReported = "M" + SIRSettings.getSetting("numberOfMessage");
 
         DEFAULT_REPORT_INTERVAL = Integer.parseInt(SIRSettings.getSetting("interval"));
+
+        if (settings.contains(REPORT_INTERVAL)) {
+            interval = settings.getInt(REPORT_INTERVAL);
+        } else {
+            interval = -1;
+        }
+        if (interval < 0) {
+            interval = DEFAULT_REPORT_INTERVAL;
+        }
 
         initInfective();
     }
@@ -88,6 +91,9 @@ public class SIRReport extends Report implements UpdateListener{
                     }
                     else if (ROUTING_ENGINE==3){
                         passiveWTombstoneDecider(hosts , messageReported);
+                    }
+                    else if (ROUTING_ENGINE==4){
+                        activeWTombstoneDecider(hosts , messageReported);
                     }
 
                     lastRecord = simTime - simTime % interval;
@@ -221,6 +227,49 @@ public class SIRReport extends Report implements UpdateListener{
 
     }
 
+    public void activeWTombstoneDecider(List<DTNHost> hosts, String idMessage){
+        int s = 0;
+        int i = 0;
+        int r = 0;
+
+        for (DTNHost host : hosts){
+
+            EpidemicActiveWTombstoneRouter thisRouter = this.getActiveWTombstoneRouter(host);
+            Map<String,DTNHost> receiptBuffer = thisRouter.getReceiptBuffer();
+            Set<String> tombstone = thisRouter.getTombstone();
+
+            //System.out.println(tombstone);
+            System.out.println(receiptBuffer);
+
+            boolean infected = false;
+            for (Message m : host.getMessageCollection()){
+                if (idMessage.equals(m.getId())){
+                    infected = true;
+                }
+            }
+
+            if (infected){
+                i++;
+            }
+
+            else {
+                if (receiptBuffer.containsKey(idMessage) || tombstone.contains(idMessage)){
+                    r++;
+                }
+                else {
+                    s++;
+                }
+            }
+
+        }
+
+        nodeInfective.add(i);
+        nodeSuspected.add(s);
+        nodeRemoved.add(r);
+
+    }
+
+
     @Override
     public void done() {
         String print = "SIR Report";
@@ -272,6 +321,12 @@ public class SIRReport extends Report implements UpdateListener{
         MessageRouter otherRouter = host.getRouter();
         assert otherRouter instanceof DecisionEngineRouter : "This router only works with other routers of same type";
         return (EpidemicPassiveWTombstoneRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
+    }
+
+    private EpidemicActiveWTombstoneRouter getActiveWTombstoneRouter (DTNHost host) {
+        MessageRouter otherRouter = host.getRouter();
+        assert otherRouter instanceof DecisionEngineRouter : "This router only works with other routers of same type";
+        return (EpidemicActiveWTombstoneRouter) ((DecisionEngineRouter) otherRouter).getDecisionEngine();
     }
 
 }

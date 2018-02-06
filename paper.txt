@@ -5,7 +5,7 @@ Scenario.name = %%DecisionEngineRouter.decisionEngine%%-REALITY-%%SIR.numberOfMe
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1 
 
-Scenario.endTime = 987529
+Scenario.endTime = 5184000
 
 #987529 Haggle Cam
 #274883 Haggle
@@ -30,14 +30,14 @@ Group.bufferSize = 20M
 ## Router
 
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = [reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveWTombstoneRouter]
+#DecisionEngineRouter.decisionEngine = [reliability.EpidemicRouter; reliability.EpidemicActiveRouter; reliability.EpidemicPassiveRouter; reliability.EpidemicPassiveWTombstoneRouter]
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicPassiveWTombstoneRouter
 #DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveRouter
-
+DecisionEngineRouter.decisionEngine = reliability.EpidemicActiveWTombstoneRouter
 
 ## TTL 24 hours=1440 (Haggle), 1 week= 10080, 3 weeks= 30240
-Group.msgTtl = 10080
+Group.msgTtl = 30240
 Group.nrofInterfaces = 1
 Group.interface1 = btInterface
 
@@ -46,7 +46,7 @@ Group.interface1 = btInterface
 Group1.groupID = A
 Group1.waitTime = 10, 30 
 Group1.speed = 0.8, 1.4
-Group1.nrofHosts = 36
+Group1.nrofHosts = 97
 #36 Haggle Cam
 #41 Haggle
 #97 Reality
@@ -60,7 +60,7 @@ Events.nrof = 2
 
 ## Trace information
 Events1.class = ExternalEventsQueue
-Events1.filePath = scenario/Haggle4-Cam-Imote.csv
+Events1.filePath = scenario/RealityConnectionTraceFinal.txt
 #Haggle4-Cam-Imote.csv
 #Haggle3-Infocom5.csv
 #Haggle6-infocom6.csv
@@ -78,7 +78,7 @@ Events2.interval = 58, 62
 Events2.size = 10k
 
 ## range of message source/destination address 
-Events2.hosts = 0,35
+Events2.hosts = 0,96
 # 0,35 Haggle Cam
 # 0,40 Haggle
 # 0,96 Reality
@@ -95,18 +95,18 @@ MovementModel.rngSeed = [2; 2; 2; 98092; 18293; 777]
 #ReportsInformations
 Report.nrofReports = 1
 Report.warmup = 0
-Report.reportDir = reports/ALLBUFFERSOC
+Report.reportDir = reports/PAPER5
 #Report.report1 = MessageStatsReport
-Report.report1 = AverageBufferOccupancyReport
+#Report.report2 = AverageBufferOccupancyReport
 #Report.report3 = ReceiptStatsReport
-#Report.report4 = SIRReport2T
+#Report.report4 = BufferOccupancyPerDayReport
+#Report.report5 = SIRReport
+
+Report.report1 = SIRReport
+
 #SIR Report
 SIR.numberOfMessage = 666
-SIR.interval = 604800
-
-#Report.report1 = SIRReport2
-#Report.report2 = MessageStatsReport
-#Report.report3 = BufferOccupancyPerHourReport
+SIR.interval = 86400
 
 
 
